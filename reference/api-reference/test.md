@@ -1,5 +1,9 @@
 # test
 
+{% swagger src="https://raw.githubusercontent.com/commoncentsapp/docs.commoncents.com/master/reference/Notify.yaml" path="undefined" method="undefined" %}
+[https://raw.githubusercontent.com/commoncentsapp/docs.commoncents.com/master/reference/Notify.yaml](https://raw.githubusercontent.com/commoncentsapp/docs.commoncents.com/master/reference/Notify.yaml)
+{% endswagger %}
+
 {% swagger src="https://petstore.swagger.io/v2/swagger.json" path="undefined" method="undefined" %}
 [https://petstore.swagger.io/v2/swagger.json](https://petstore.swagger.io/v2/swagger.json)
 {% endswagger %}
@@ -9,7 +13,7 @@
 
 {% endswagger-description %}
 
-{% swagger-parameter in="query" %}
+{% swagger-parameter in="query" required="false" %}
 
 {% endswagger-parameter %}
 
