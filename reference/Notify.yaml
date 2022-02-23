@@ -38,6 +38,16 @@ paths:
           description: User Not Found
       operationId: get-users-userId
       description: Retrieve the information of the user with the matching user ID.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                test:
+                  type: string
+                hello:
+                  type: string
     patch:
       summary: Update User Information
       operationId: patch-users-userId
