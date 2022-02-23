@@ -173,7 +173,7 @@ components:
         id:
           type: integer
           description: Unique identifier for the given user.
-        firstName:
+        firstNameTest:
           type: string
         lastName:
           type: string
@@ -193,7 +193,7 @@ components:
           description: The date that the user was created.
       required:
         - id
-        - firstName
+        - firstNameTest
         - lastName
         - email
         - emailVerified
