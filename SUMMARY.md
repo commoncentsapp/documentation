@@ -1,15 +1,13 @@
 # Table of contents
 
-* [Welcome!](README.md)
+* [Getting Started](README.md)
 * [Quick Start](quick-start.md)
 
-## Reference
+## API Reference
 
-* [API Reference](reference/api-reference/README.md)
-  * [test](reference/api-reference/test.md)
-  * [Pets](reference/api-reference/pets.md)
-  * [Users](reference/api-reference/users.md)
-
-***
-
-* [Technical Documentation](technical-documentation.md)
+* [API Reference](api-reference/api-reference/README.md)
+  * [Ledger](api-reference/api-reference/ledger.md)
+  * [Notify](api-reference/api-reference/notify.md)
+  * [Organizations](api-reference/api-reference/organizations.md)
+  * [Pets](api-reference/api-reference/pets.md)
+  * [Users](api-reference/api-reference/users.md)
