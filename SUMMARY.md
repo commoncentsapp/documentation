@@ -1,17 +1,15 @@
 # Table of contents
 
-* [Introduction](README.md)
-  * [Authentication](introduction/authentication.md)
-  * [Errors](introduction/errors.md)
-  * [Idempotent Requests](introduction/idempotent-requests.md)
-  * [Metadata](introduction/metadata.md)
-  * [Pagination](introduction/pagination.md)
-  * [Versioning](introduction/versioning.md)
-* [Changelog](changelog.md)
-* [CLI](cli.md)
-
 ## API Reference
 
+* [Changelog](README.md)
+* [Introduction](api-reference/introduction/README.md)
+  * [Authentication](api-reference/introduction/authentication.md)
+  * [Errors](api-reference/introduction/errors.md)
+  * [Idempotent Requests](api-reference/introduction/idempotent-requests.md)
+  * [Metadata](api-reference/introduction/metadata.md)
+  * [Pagination](api-reference/introduction/pagination.md)
+  * [Versioning](api-reference/introduction/versioning.md)
 * [REST](api-reference/rest/README.md)
   * [Example](api-reference/rest/api-reference/README.md)
     * [Pets](api-reference/rest/api-reference/pets.md)
@@ -21,15 +19,15 @@
   * [Organizations](api-reference/rest/organizations.md)
   * [Ledger](api-reference/rest/ledger.md)
 * [GraphQL](api-reference/graphql.md)
+* [CLI](api-reference/cli.md)
 * [SDKS](api-reference/sdks.md)
+* [Webhooks](api-reference/webhooks.md)
 
 ## Guides
 
 * [Quick Start](guides/quick-start.md)
 
 ## Webhooks
-
-* [Events](webhooks/events.md)
 
 ## Support
 
