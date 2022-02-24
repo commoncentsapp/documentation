@@ -2,8 +2,7 @@
 
 ## API Reference
 
-* [Changelog](README.md)
-* [Introduction](api-reference/introduction/README.md)
+* [Introduction](README.md)
   * [Authentication](api-reference/introduction/authentication.md)
   * [Errors](api-reference/introduction/errors.md)
   * [Idempotent Requests](api-reference/introduction/idempotent-requests.md)
@@ -19,13 +18,15 @@
   * [Organizations](api-reference/rest/organizations.md)
   * [Ledger](api-reference/rest/ledger.md)
 * [GraphQL](api-reference/graphql.md)
+* [Changelog](<README (1).md>)
 * [CLI](api-reference/cli.md)
 * [SDKS](api-reference/sdks.md)
 * [Webhooks](api-reference/webhooks.md)
 
-## Guides
+## Products
 
-* [Quick Start](guides/quick-start.md)
+* [Notify](products/notify.md)
+* [Ledger](products/ledger.md)
 
 ## Support
 
