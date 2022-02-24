@@ -8,6 +8,7 @@
   * [Pagination](introduction/pagination.md)
   * [Versioning](introduction/versioning.md)
 * [Changelog](changelog.md)
+* [CLI](cli.md)
 
 ## API Reference
 
