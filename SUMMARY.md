@@ -26,4 +26,8 @@
 
 * [Quick Start](guides/quick-start.md)
 
-## Changelog
+## Support
+
+* [Help](support/help.md)
+* [Community](support/community.md)
+* [FAQS](support/faqs.md)
