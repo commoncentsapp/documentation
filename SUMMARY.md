@@ -1,13 +1,29 @@
 # Table of contents
 
-* [Getting Started](README.md)
-* [Quick Start](quick-start.md)
+* [Introduction](README.md)
+  * [Authentication](introduction/authentication.md)
+  * [Errors](introduction/errors.md)
+  * [Idempotent Requests](introduction/idempotent-requests.md)
+  * [Metadata](introduction/metadata.md)
+  * [Pagination](introduction/pagination.md)
+  * [Versioning](introduction/versioning.md)
+* [Changelog](changelog.md)
 
 ## API Reference
 
-* [API Reference](api-reference/api-reference/README.md)
-  * [Ledger](api-reference/api-reference/ledger.md)
-  * [Notify](api-reference/api-reference/notify.md)
-  * [Organizations](api-reference/api-reference/organizations.md)
-  * [Pets](api-reference/api-reference/pets.md)
-  * [Users](api-reference/api-reference/users.md)
+* [REST](api-reference/rest/README.md)
+  * [Example](api-reference/rest/api-reference/README.md)
+    * [Pets](api-reference/rest/api-reference/pets.md)
+    * [Users](api-reference/rest/api-reference/users.md)
+  * [Notify](api-reference/rest/notify/README.md)
+    * [SMS](api-reference/rest/notify/sms.md)
+  * [Organizations](api-reference/rest/organizations.md)
+  * [Ledger](api-reference/rest/ledger.md)
+* [GraphQL](api-reference/graphql.md)
+* [SDKS](api-reference/sdks.md)
+
+## Guides
+
+* [Quick Start](guides/quick-start.md)
+
+## Changelog
