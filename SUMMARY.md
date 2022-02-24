@@ -27,8 +27,6 @@
 
 * [Quick Start](guides/quick-start.md)
 
-## Webhooks
-
 ## Support
 
 * [Help](support/help.md)
