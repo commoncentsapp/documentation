@@ -1,0 +1,309 @@
+openapi: 3.0.0
+info:
+  title: Ledger
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /transactions:
+    post:
+      summary: create a new transaction from an accounting event
+      tags: []
+      responses: {}
+      operationId: post-accounting-events
+      description: 'transform an accounting event into a journal entry (double entry) '
+    get:
+      summary: ''
+      operationId: get-accounting-events
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AccountingEntry'
+    parameters: []
+components:
+  schemas:
+    AccountingEvent:
+      title: AccountingEvents
+      type: object
+      description: a raw bank transaction
+      properties:
+        id:
+          type: string
+        source:
+          type: string
+        observedAt:
+          type: string
+        accountingType:
+          $ref: '#/components/schemas/AccountingType'
+        key:
+          type: string
+        amountFractionalUnits:
+          type: integer
+        currency:
+          $ref: '#/components/schemas/Currency'
+        transactedAt:
+          type: string
+        version:
+          type: string
+        status:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        foreignKey:
+          type: string
+        memo:
+          type: string
+        metaData:
+          type: object
+    AccountingEntry:
+      title: AccountingEntry
+      type: object
+      description: 'A finalized general ledger entry. Relates to a journal entry or a transaction. '
+      properties:
+        id:
+          type: string
+        account:
+          type: string
+        journalEntry:
+          $ref: '#/components/schemas/JournalEntry'
+        transactedAt:
+          type: string
+        version:
+          type: string
+        status:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        period:
+          $ref: '#/components/schemas/Period'
+        amountFractionalUnits:
+          type: integer
+        memo:
+          type: string
+    Account:
+      title: Account
+      type: object
+      description: 'Cash or accounts payable '
+      properties:
+        id:
+          type: string
+        accountingEntries:
+          type: array
+          items:
+            $ref: '#/components/schemas/AccountingEntry'
+        name:
+          type: string
+        code:
+          type: string
+        version:
+          type: string
+        status:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        entityID:
+          type: string
+        type:
+          type: string
+          description: credit or debit
+      required:
+        - type
+    JournalEntry:
+      title: JournalEntry
+      type: object
+      description: a total transaction assigned to an entity
+      properties:
+        id:
+          type: string
+        accountingType:
+          $ref: '#/components/schemas/AccountingType'
+        accountingEntries:
+          type: array
+          items:
+            $ref: '#/components/schemas/AccountingEntry'
+        amountFractionalUnits:
+          type: integer
+          description: |
+            the cent in different currencies
+        currency:
+          $ref: '#/components/schemas/Currency'
+        version:
+          type: string
+        status:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        transactedAt:
+          type: string
+        period:
+          $ref: '#/components/schemas/Period'
+        memo:
+          type: string
+    AccountingType:
+      title: AccountingType
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        accountingEvents:
+          type: array
+          items:
+            $ref: '#/components/schemas/AccountingEvent'
+        journalEntries:
+          type: array
+          items:
+            $ref: '#/components/schemas/JournalEntry'
+        conversion:
+          type: string
+        version:
+          type: string
+        status:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        metaData:
+          type: object
+    LedgerEntry:
+      title: LedgerEntry
+      type: object
+      properties:
+        id:
+          type: string
+        measure:
+          $ref: '#/components/schemas/Measure'
+        accountingEntry:
+          $ref: '#/components/schemas/AccountingEntry'
+        period:
+          $ref: '#/components/schemas/Period'
+        entity:
+          $ref: '#/components/schemas/Entity'
+        status:
+          type: string
+        version:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+    Period:
+      title: Period
+      type: object
+      description: 'monthly periods (or other) '
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        year:
+          type: integer
+        startsAt:
+          type: string
+        endsAt:
+          type: string
+        frequency:
+          type: string
+        parent:
+          $ref: '#/components/schemas/Period'
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+    Measure:
+      title: Measure
+      type: object
+      description: some kind of budget or KPI
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        type:
+          type: string
+        conversion:
+          type: string
+          description: |
+            reference to a lambda
+        metaData:
+          type: string
+    Entity:
+      title: Entity
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        referencableType:
+          type: string
+        referencableID:
+          type: string
+        version:
+          type: string
+        status:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+    Currency:
+      title: Currency
+      type: object
+      properties:
+        id:
+          type: string
+        code:
+          type: string
+        name:
+          type: string
+        symbol:
+          type: string
+        fractionalUnit:
+          type: string
+        numberToBasic:
+          type: integer
+    MeasureAssignment:
+      title: MeasureAssignment
+      type: object
+      properties:
+        id:
+          type: string
+        measure:
+          $ref: '#/components/schemas/Measure'
+        entity:
+          $ref: '#/components/schemas/Entity'
+        activatedAt:
+          type: string
+        deactivatedAt:
+          type: string
+        status:
+          type: string
+        version:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+      description: |
+        Track when different entities use different measures or budgets
