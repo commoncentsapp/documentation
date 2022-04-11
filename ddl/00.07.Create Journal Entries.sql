@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS `journal_entries`;
 CREATE TABLE `journal_entries` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `accounting_type_id` bigint DEFAULT NULL,
+  `accounting_event_id` bigint DEFAULT NULL,
   `amount_fractional_units` int DEFAULT NULL,
   `currency_id` bigint DEFAULT NULL,
   `transacted_at` datetime(6) DEFAULT NULL,
@@ -16,6 +17,8 @@ CREATE TABLE `journal_entries` (
   KEY `fk_rails_45098ecc93` (`accounting_type_id`),
   KEY `fk_rails_7b0986a38e` (`currency_id`),
   KEY `fk_rails_c7ada1574d` (`period_id`),
+  KEY `fk_rails_144fd5c149` (`accounting_event_id`),
+  CONSTRAINT `fk_rails_144fd5c149` FOREIGN KEY (`accounting_event_id`) REFERENCES `accounting_events` (`id`),
   CONSTRAINT `fk_rails_45098ecc93` FOREIGN KEY (`accounting_type_id`) REFERENCES `accounting_types` (`id`),
   CONSTRAINT `fk_rails_7b0986a38e` FOREIGN KEY (`currency_id`) REFERENCES `currencies` (`id`),
   CONSTRAINT `fk_rails_c7ada1574d` FOREIGN KEY (`period_id`) REFERENCES `periods` (`id`)
