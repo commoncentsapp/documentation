@@ -5,29 +5,59 @@ info:
 servers:
   - url: 'http://localhost:3000'
 paths:
-  /transactions:
-    post:
-      summary: create a new transaction from an accounting event
+  /accounting-events:
+    get:
+      summary: Your GET endpoint
       tags: []
       responses: {}
-      operationId: post-accounting-events
-      description: 'transform an accounting event into a journal entry (double entry) '
-    get:
-      summary: ''
       operationId: get-accounting-events
+      description: get a list of accounting events
+    post:
+      summary: ''
+      operationId: post-accounting-events
       responses:
         '200':
           description: OK
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties: {}
-          application/xml:
-            schema:
-              $ref: '#/components/schemas/AccountingEntry'
+      description: 'report a transaction from a card, bank, etc'
+  '/account-events/:id':
     parameters: []
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses: {}
+      operationId: get-account-events-id
+      description: get a single accounting event
+  /measures:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses: {}
+      operationId: get-measures
+      description: |
+        get a list of the measures (KPIs or budgets) 
+  '/measures/:id':
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses: {}
+      operationId: 'get-measure-:id'
+      description: get a single measure by ID
+    parameters: []
+  /journal-entries:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses: {}
+      operationId: get-journal-entries
+      description: 'get a list of journal entries (transactions) - done, and clean'
+  '/journal-entries/:id':
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses: {}
+      operationId: 'get-journal-entries-:id'
+      description: |
+        get a single journal entry
 components:
   schemas:
     AccountingEvent:
@@ -65,6 +95,8 @@ components:
           type: string
         metaData:
           type: object
+        entity:
+          $ref: '#/components/schemas/Entity'
     AccountingEntry:
       title: AccountingEntry
       type: object
@@ -73,7 +105,7 @@ components:
         id:
           type: string
         account:
-          type: string
+          $ref: '#/components/schemas/Account'
         journalEntry:
           $ref: '#/components/schemas/JournalEntry'
         transactedAt:
@@ -92,6 +124,8 @@ components:
           type: integer
         memo:
           type: string
+        currency:
+          $ref: '#/components/schemas/Currency'
     Account:
       title: Account
       type: object
@@ -120,6 +154,8 @@ components:
         type:
           type: string
           description: credit or debit
+        entity:
+          $ref: '#/components/schemas/Entity'
       required:
         - type
     JournalEntry:
@@ -155,6 +191,8 @@ components:
           $ref: '#/components/schemas/Period'
         memo:
           type: string
+        accountingEvent:
+          $ref: '#/components/schemas/AccountingEvent'
     AccountingType:
       title: AccountingType
       type: object
@@ -205,6 +243,12 @@ components:
           type: string
         updatedAt:
           type: string
+        amountFractionalUnits:
+          type: integer
+        memo:
+          type: string
+        currency:
+          $ref: '#/components/schemas/Currency'
     Period:
       title: Period
       type: object
@@ -222,12 +266,10 @@ components:
           type: string
         frequency:
           type: string
-        parent:
-          $ref: '#/components/schemas/Period'
-        createdAt:
-          type: string
-        updatedAt:
-          type: string
+        month:
+          type: integer
+        periodicity:
+          $ref: '#/components/schemas/Periodicity'
     Measure:
       title: Measure
       type: object
@@ -246,6 +288,16 @@ components:
           description: |
             reference to a lambda
         metaData:
+          type: string
+        periodicity:
+          $ref: '#/components/schemas/Periodicity'
+        version:
+          type: string
+        status:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
           type: string
     Entity:
       title: Entity
@@ -307,3 +359,15 @@ components:
           type: string
       description: |
         Track when different entities use different measures or budgets
+    Periodicity:
+      title: Periodicity
+      type: object
+      properties:
+        id:
+          type: string
+        frequency:
+          type: string
+        parent:
+          $ref: '#/components/schemas/Periodicity'
+        '':
+          type: string
