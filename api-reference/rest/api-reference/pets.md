@@ -1,66 +1,6 @@
----
-description: >-
-  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-  when an unknown printer took a galley of type.
----
+# Pets
 
-# Account
-
-```json
-{
-  "accountingEntries": [
-    {
-      "account": {
-        "accountingEntries": [],
-        "entity": {}
-      },
-      "amountFractionalUnits": 0,
-      "createdAt": "string",
-      "currency": {},
-      "id": "string",
-      "journalEntry": {
-        "accountingEntries": [],
-        "accountingEvent": {},
-        "accountingType": {},
-        "currency": {},
-        "period": {}
-      },
-      "memo": "string",
-      "period": {
-        "periodicity": {}
-      },
-      "status": "string",
-      "transactedAt": "string",
-      "updatedAt": "string",
-      "version": "string"
-    }
-  ],
-  "code": "string",
-  "createdAt": "string",
-  "entity": {
-    "createdAt": "string",
-    "id": "string",
-    "name": "string",
-    "referencableID": "string",
-    "referencableType": "string",
-    "status": "string",
-    "updatedAt": "string",
-    "version": "string"
-  },
-  "entityID": "string",
-  "id": "string",
-  "name": "string",
-  "status": "string",
-  "type": "string",
-  "updatedAt": "string",
-  "version": "string"
-}
-```
-
-
-
-## Creating a new&#x20;
+## Creating a new pet
 
 {% swagger baseUrl="https://api.myapi.com/v1" method="post" path="/pet" summary="Create pet." %}
 {% swagger-description %}
@@ -72,11 +12,11 @@ The name of the pet
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="owner_id" required="false" type="string" %}
-The
+The 
 
 `id`
 
-of the user who owns the pet
+ of the user who owns the pet
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="species" required="false" type="string" %}
@@ -118,29 +58,3 @@ The breed of the pet
 {% hint style="info" %}
 **Good to know:** This API method was auto-generated from an example Swagger file. You'll see that it's not editable – that's because the contents are synced to an URL! Any time the linked file changes, the documentation will change too.
 {% endhint %}
-
-## Use Cases
-
-<details>
-
-<summary>Making something cool</summary>
-
-
-
-</details>
-
-<details>
-
-<summary>Making more cool stuff </summary>
-
-
-
-</details>
-
-<details>
-
-<summary>Lots of great ways that we could use this cool stuff </summary>
-
-
-
-</details>
