@@ -30,12 +30,12 @@
 
 ## Developer Tools
 
-* [SDKS](developer-tools/sdks.md)
-* [CLI](developer-tools/cli.md)
+* [SDKS](api-reference/sdks.md)
+* [CLI](api-reference/cli.md)
 
 ## Support
 
-* [Changelog](support/readme-1.md)
+* [Changelog](<README (1).md>)
 * [Help](support/help.md)
 * [Community](support/community.md)
 * [FAQS](support/faqs.md)
