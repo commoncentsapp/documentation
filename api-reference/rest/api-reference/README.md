@@ -1,8 +1,8 @@
-# API Reference
+# Ledger
 
 Dive into the specifics of each API endpoint by checking out our complete documentation.
 
-## Pets
+## Account
 
 All the methods associated with `CRUD`ing some pets. Which isn't as weird as it sounds:
 
