@@ -1,0 +1,34 @@
+openapi: 3.0.0
+x-stoplight:
+  id: b8ykadb3dh3ff
+info:
+  title: SMS
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /sms:
+    post:
+      summary: Send a text
+      operationId: post-sms
+      responses:
+        '200':
+          description: OK
+      description: 'send a text message '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                toPhone:
+                  type: string
+                message:
+                  type: string
+            examples:
+              example-1:
+                value:
+                  toPhone: string
+                  message: string
+components:
+  schemas: {}
