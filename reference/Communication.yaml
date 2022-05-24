@@ -1,0 +1,307 @@
+openapi: 3.0.0
+x-stoplight:
+  id: b8ykadb3dh3ff
+info:
+  title: Communication
+  version: '1.0'
+  description: 'This API enables you to communicate with the CC bot and your financial partners. '
+  contact:
+    name: Matt
+    url: commoncents.io/contact
+    email: matt@commoncents.io
+  termsOfService: 'https://docs.commoncents.io/terms'
+servers:
+  - url: 'httpa://api.commoncents.io/communication'
+paths:
+  /texts:
+    post:
+      summary: Send a text
+      operationId: post-sms
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  account_sid:
+                    type: string
+                  api_version:
+                    type: string
+                  body:
+                    type: string
+                  date_created:
+                    type: string
+                  date_sent:
+                    type: string
+                  date_updated:
+                    type: string
+                  direction:
+                    type: string
+                  error_code:
+                    type: 'null'
+                  error_message:
+                    type: 'null'
+                  from:
+                    type: string
+                  messaging_service_sid:
+                    type: string
+                  num_media:
+                    type: string
+                  num_segments:
+                    type: string
+                  price:
+                    type: 'null'
+                  price_unit:
+                    type: 'null'
+                  sid:
+                    type: string
+                  status:
+                    type: string
+                  subresource_uris:
+                    type: object
+                    properties:
+                      media:
+                        type: string
+                  to:
+                    type: string
+                  uri:
+                    type: string
+                x-examples:
+                  example-1:
+                    account_sid: ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                    api_version: '2010-04-01'
+                    body: This is the ship that made the Kessel Run in fourteen parsecs?
+                    date_created: 'Thu, 30 Jul 2015 20:12:31 +0000'
+                    date_sent: 'Thu, 30 Jul 2015 20:12:33 +0000'
+                    date_updated: 'Thu, 30 Jul 2015 20:12:33 +0000'
+                    direction: outbound-api
+                    error_code: null
+                    error_message: null
+                    from: '+15017122661'
+                    messaging_service_sid: MGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                    num_media: '0'
+                    num_segments: '1'
+                    price: null
+                    price_unit: null
+                    sid: SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                    status: sent
+                    subresource_uris:
+                      media: /2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Media.json
+                    to: '+15558675310'
+                    uri: /2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.json
+        '':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  account_sid:
+                    type: string
+                  api_version:
+                    type: string
+                  body:
+                    type: string
+                  date_created:
+                    type: string
+                  date_sent:
+                    type: string
+                  date_updated:
+                    type: string
+                  direction:
+                    type: string
+                  error_code:
+                    type: 'null'
+                  error_message:
+                    type: 'null'
+                  from:
+                    type: string
+                  messaging_service_sid:
+                    type: string
+                  num_media:
+                    type: string
+                  num_segments:
+                    type: string
+                  price:
+                    type: 'null'
+                  price_unit:
+                    type: 'null'
+                  sid:
+                    type: string
+                  status:
+                    type: string
+                  subresource_uris:
+                    type: object
+                    properties:
+                      media:
+                        type: string
+                  to:
+                    type: string
+                  uri:
+                    type: string
+                x-examples:
+                  example-1:
+                    account_sid: ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                    api_version: '2010-04-01'
+                    body: Hello there!
+                    date_created: 'Thu, 30 Jul 2015 20:12:31 +0000'
+                    date_sent: 'Thu, 30 Jul 2015 20:12:33 +0000'
+                    date_updated: 'Thu, 30 Jul 2015 20:12:33 +0000'
+                    direction: outbound-api
+                    error_code: null
+                    error_message: null
+                    from: '+15555555555'
+                    messaging_service_sid: MGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                    num_media: '0'
+                    num_segments: '1'
+                    price: null
+                    price_unit: null
+                    sid: SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                    status: sent
+                    subresource_uris:
+                      media: /2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Media.json
+                    to: '+12316851234'
+                    uri: /2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.json
+      description: send a text message
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              x-examples:
+                example-1:
+                  account_sid: ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                  api_version: '2010-04-01'
+                  body: This is the ship that made the Kessel Run in fourteen parsecs?
+                  date_created: 'Thu, 30 Jul 2015 20:12:31 +0000'
+                  date_sent: 'Thu, 30 Jul 2015 20:12:33 +0000'
+                  date_updated: 'Thu, 30 Jul 2015 20:12:33 +0000'
+                  direction: outbound-api
+                  error_code: null
+                  error_message: null
+                  from: '+15017122661'
+                  messaging_service_sid: MGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                  num_media: '0'
+                  num_segments: '1'
+                  price: null
+                  price_unit: null
+                  sid: SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                  status: sent
+                  subresource_uris:
+                    media: /2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Media.json
+                  to: '+15558675310'
+                  uri: /2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.json
+              properties:
+                body:
+                  type: string
+                from:
+                  type: string
+                to:
+                  type: string
+                statusCallback:
+                  type: string
+                mediaUrl:
+                  type: string
+            examples:
+              example-1:
+                value:
+                  toPhone: string
+                  message: string
+      x-internal: false
+    parameters: []
+    get:
+      summary: ''
+      operationId: get-text
+      responses:
+        '200':
+          description: OK
+  '/texts/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses: {}
+      operationId: get-text-id
+    put:
+      summary: ''
+      operationId: put-text-id
+      responses:
+        '200':
+          description: OK
+  /emails:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses: {}
+      operationId: get-email
+    post:
+      summary: ''
+      operationId: post-email
+      responses:
+        '200':
+          description: OK
+    parameters: []
+  '/emails/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: get an email
+      tags: []
+      responses: {}
+      operationId: get-email-id
+      x-internal: true
+  /conversations:
+    get:
+      summary: get a list of conversations
+      tags: []
+      responses: {}
+      operationId: get-conversations
+    post:
+      summary: create a conversation
+      operationId: post-conversations
+      responses:
+        '200':
+          description: OK
+  '/conversation/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: get a conversation
+      tags: []
+      responses: {}
+      operationId: get-conversation-id
+    put:
+      summary: update a conversation
+      operationId: put-conversation-id
+      responses:
+        '200':
+          description: OK
+  /alias:
+    get:
+      summary: get email alias
+      tags: []
+      responses: {}
+      operationId: get-alias
+      x-internal: true
+    post:
+      summary: Create an email alias
+      operationId: post-alias
+      responses:
+        '200':
+          description: OK
+components:
+  schemas: {}
