@@ -1,4 +1,6 @@
 openapi: 3.0.0
+x-stoplight:
+  id: cfbbd33a0bd5a
 info:
   title: Organization
   version: '1.0'

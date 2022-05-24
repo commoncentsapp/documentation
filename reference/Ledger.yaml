@@ -105,6 +105,74 @@ paths:
       responses:
         '200':
           description: OK
+  /transactions:
+    get:
+      summary: get a list of transaction
+      tags: []
+      responses: {}
+      operationId: get-transactions
+    post:
+      summary: create a transaction
+      operationId: post-transactions
+      responses:
+        '200':
+          description: OK
+  '/transaction/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: get a single transaction
+      tags: []
+      responses: {}
+      operationId: get-transaction-id
+    put:
+      summary: update a transaction
+      operationId: put-transaction-id
+      responses:
+        '200':
+          description: OK
+  /cards:
+    get:
+      summary: get a list of cards
+      tags: []
+      responses: {}
+      operationId: get-cards
+      description: 'create a card '
+    post:
+      summary: create a card
+      operationId: post-cards
+      responses:
+        '200':
+          description: OK
+  '/cards/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: get a single card
+      tags: []
+      responses: {}
+      operationId: get-cards-id
+    put:
+      summary: update a card
+      operationId: put-cards-id
+      responses:
+        '200':
+          description: OK
+  /funding:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses: {}
+      operationId: get-funding
+      description: add a fundind source to your card
 components:
   schemas:
     AccountingEvent:
