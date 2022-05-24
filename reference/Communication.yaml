@@ -266,12 +266,14 @@ paths:
       tags: []
       responses: {}
       operationId: get-conversations
+      description: ''
     post:
       summary: create a conversation
       operationId: post-conversations
       responses:
         '200':
           description: OK
+      description: Add the commoncents bot to your messages
   '/conversation/{id}':
     parameters:
       - schema:
@@ -304,4 +306,28 @@ paths:
         '200':
           description: OK
 components:
-  schemas: {}
+  schemas:
+    text:
+      title: text
+      x-stoplight:
+        id: 5aok5kh6hujxz
+      type: object
+      properties:
+        id:
+          type: string
+    conversation:
+      title: conversation
+      x-stoplight:
+        id: mfoq021brjlt1
+      type: object
+      properties:
+        id:
+          type: string
+    email:
+      title: email
+      x-stoplight:
+        id: apnt1utlutxrc
+      type: object
+      properties:
+        id:
+          type: string

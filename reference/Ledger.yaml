@@ -2,8 +2,12 @@ openapi: 3.0.0
 info:
   title: Ledger
   version: '1.0'
+  description: 'Accounting and financial API''s that help track, monitor and understand your budgets'
+  contact:
+    name: Matt
+    email: matt@commoncents.io
 servers:
-  - url: 'http://localhost:3000'
+  - url: 'https://api.commoncents.io/ledger'
 paths:
   /accounting-events:
     get:
@@ -58,6 +62,49 @@ paths:
       operationId: 'get-journal-entries-:id'
       description: |
         get a single journal entry
+  /receipts:
+    get:
+      summary: get a list of receipts
+      tags: []
+      responses: {}
+      operationId: get-receipt
+    parameters: []
+    post:
+      summary: create a receipt
+      operationId: post-receipts
+      responses:
+        '200':
+          description: OK
+  '/receipts/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: get a receipt
+      tags: []
+      responses: {}
+      operationId: get-receipts-id
+    post:
+      summary: get a single receipt
+      operationId: post-receipts-id
+      responses:
+        '200':
+          description: OK
+    put:
+      summary: update a receipt
+      operationId: put-receipts-id
+      responses:
+        '200':
+          description: OK
+    delete:
+      summary: delete a receipt
+      operationId: delete-receipts-id
+      responses:
+        '200':
+          description: OK
 components:
   schemas:
     AccountingEvent:

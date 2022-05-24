@@ -4,7 +4,23 @@ info:
   version: '1.0'
   description: ''
 servers:
-  - url: 'http://localhost:3000'
+  - url: 'https://api.commoncents.io/organization'
 paths: {}
 components:
-  schemas: {}
+  schemas:
+    Entity:
+      title: Entity
+      x-stoplight:
+        id: z4gv4qa6da7oi
+      type: object
+      properties:
+        id:
+          type: string
+    User:
+      title: User
+      x-stoplight:
+        id: t0i5luq098rj7
+      type: object
+      properties:
+        id:
+          type: string
