@@ -1,4 +1,0 @@
-# Rate Limiting
-
-Rate Limiting
-
