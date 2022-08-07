@@ -1,21 +1,17 @@
 # Table of contents
 
-## Getting Started
+## Personal Finance
 
-* [Account Set Up](README.md)
+* [Understanding your dollars](README.md)
 
-## Products
+## Bill Management
 
-* [Communication](products/communication.md)
-* [Ledger](products/ledger.md)
+* [Proactive instead of reactive](bill-management/communication.md)
 
-## Financial Competency&#x20;
+## Family Finance
 
-* [Budgeting 101](financial-competency/budgeting-101.md)
+* [Budgeting 101](family-finance/budgeting-101.md)
 
-## Support
+## Goals
 
-* [Changelog](<README (1).md>)
-* [Help](support/help.md)
-* [Community](support/community.md)
-* [FAQS](support/faqs.md)
+* [FAQS](goals/faqs.md)
